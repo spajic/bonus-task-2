@@ -28,7 +28,7 @@
 
 Это более-менее привычная схема, но знали ли вы, что в `Posgtres` тоже можно писать данные потоком?
 
-Вот набросок потокового чтения из файла с потоковой записью в `Postgres`
+Вот набросок потокового чтения из файла с потоковой записью в `Postgres`:
 
 ```ruby
 @cities = {}
@@ -69,7 +69,7 @@ def import(trip)
   from_id = @cities[trip['from']]
   if !from_id
     from_id = cities.size + 1
-    cities[trip['from']] = from_id
+    @cities[trip['from']] = from_id
   end
 
   # ...
